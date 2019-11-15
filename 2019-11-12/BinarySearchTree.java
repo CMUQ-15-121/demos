@@ -37,6 +37,9 @@ public class BinarySearchTree<DataType extends Comparable<DataType>> {
 		else if (res > 0) {
 			node.left = add(node.left, item);
 		}
+		else {
+			throw new IllegalStateException("Duplicate value in tree " + item);
+		}
 		
 		return node;
 	}
