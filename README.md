@@ -1,3 +1,3 @@
-This repository contains example code written during lecture in 15-121 taught by Ryan Riley in Doha, Qatar.
+# Demo Code: Fall 2020
 
-Check the branches for each semester.
+This repository contains example code written during lecture in 15-121 taught by Ryan Riley in Doha, Qatar.
