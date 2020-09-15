@@ -1,49 +1,53 @@
 
 public class Tester {
-
 	public static void main(String[] args) {
-		Person p = new Person("Bob Jones", 62);
+		Person p = new Person("Ryan Riley", 38);
 		Student s = new Student("Jassim Al-Kubaisi", 21, "jkubaisi");
 		Staff w = new Staff("Ahmed Khan", 44, "akhan", 5000);
-
 		System.out.println(p);
 		System.out.println(s);
 		System.out.println(w);
-
+		
 		System.out.println("---");
-
-		Person[] personArray = new Person[5];
+		p.birthday();
+		s.birthday();
+		w.birthday();
+		System.out.println(p);
+		System.out.println(s);
+		System.out.println(w);
+		
+		System.out.println("---");
+		
+		Person[] personArray = new Person[4];
 		personArray[0] = p;
 		personArray[1] = s;
 		personArray[2] = w;
-		personArray[3] = new Student("Heather Johnson", 19, "hjohnson");
-		personArray[4] = new Staff("Manuela Prajea", 57, "mprajea", 35000);
-
-		// Print all people
-		for (int i = 0; i < personArray.length; i++) {
+		personArray[3] = new Staff("Heather Johnson", 19, "hjohnson", 35000);
+		
+		for(int i = 0; i < personArray.length; i++) {
 			System.out.println(personArray[i]);
 		}
-
+		
 		System.out.println("---");
-
-		// Print only students
-		for (int i = 0; i < personArray.length; i++) {
+		for(int i = 0; i < personArray.length; i++) {
 			if (personArray[i] instanceof Student) {
-				System.out.println(personArray[i]);
+				//System.out.println(personArray[i]);
+				Student tmp = (Student) personArray[i];
+				String id = tmp.getAndrewId();
+				System.out.println(id);
 			}
+			
 		}
-
-		// Calculate the total salaries
+		
+		System.out.println("---");
 		int salarySum = 0;
-		for (int i = 0; i < personArray.length; i++) {
+		for(int i = 0; i < personArray.length; i++) {
 			if (personArray[i] instanceof Staff) {
 				Staff tmp = (Staff) personArray[i];
 				salarySum += tmp.getSalary();
+				//salarySum += ((Staff)personArray[i]).getSalary();
 			}
 		}
-
-		System.out.println("---");
-
-		System.out.println("Total Salaries: " + salarySum);
+		System.out.println(salarySum);
 	}
 }
