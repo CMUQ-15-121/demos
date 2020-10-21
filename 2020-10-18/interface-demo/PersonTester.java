@@ -4,20 +4,17 @@ import java.util.Collections;
 public class PersonTester {
 
 	public static void main(String[] args) {
-		ArrayList<Person> people = new ArrayList<Person>();
-		
-		people.add( new Person("john") );
-		people.add( new Person("ahmed") );
-		people.add( new Person("carol") );
-		people.add( new Person("noor") );
-		people.add( new Person("Zack") );
+		ArrayList<Person> myList = new ArrayList<Person>();
 
-		Collections.sort(people);
-		
-		for(Person p: people) {
+		myList.add(new Person("Zain", 22));
+		myList.add(new Person("Ahmed", 19));
+		myList.add(new Person("John", 35));
+		myList.add(new Person("Ahmed", 18));
+
+		Collections.sort(myList);
+
+		for (Person p : myList) {
 			System.out.println(p);
 		}
-
 	}
-
 }
