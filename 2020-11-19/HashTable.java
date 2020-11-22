@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 public class HashTable<DataType> {
-	private static final int NUM_BUCKETS = 2;
+	private static final int NUM_BUCKETS = 1000;
 	private ArrayList<DataType>[] buckets;
 	
 	public HashTable() {
