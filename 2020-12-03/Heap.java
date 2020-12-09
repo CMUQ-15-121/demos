@@ -39,9 +39,11 @@ public class Heap<DataType extends Comparable<DataType>> {
 			if (self.compareTo(left) < 0 && left.compareTo(right) > 0) {
 				h.set(idx, left);
 				h.set(idx * 2, self);
+				idx = idx * 2;
 			} else if (self.compareTo(right) < 0 && right.compareTo(left) > 0) {
 				h.set(idx, right);
 				h.set(idx * 2 + 1, self);
+				idx = idx * 2 + 1;
 			} else {
 				break;
 			}
