@@ -1,5 +1,5 @@
 
-public class ForLoopDemo {
+public class LoopDemo {
 
 	public static void main(String[] args) {
 		/* These two loops do the exact same thing */
