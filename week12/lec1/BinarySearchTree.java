@@ -104,8 +104,8 @@ public class BinarySearchTree<DataType extends Comparable<DataType>> {
 			return;
 		}
 		System.out.println(node.data);
-		printInOrder(node.left);
-		printInOrder(node.right);
+		printPreOrder(node.left);
+		printPreOrder(node.right);
 	}
 
 	public void printPostOrder() {
@@ -116,8 +116,8 @@ public class BinarySearchTree<DataType extends Comparable<DataType>> {
 		if (node == null) {
 			return;
 		}
-		printInOrder(node.left);
-		printInOrder(node.right);
+		printPostOrder(node.left);
+		printPostOrder(node.right);
 		System.out.println(node.data);
 	}
 
