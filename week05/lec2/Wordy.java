@@ -1,14 +1,18 @@
+// N is the length of the word
 public class Wordy {
 	String word;
 
+	// O(1)
 	public Wordy(String s) {
 		this.word = s;
 	}
 
+	// O(1)
 	public String getWord() {
 		return word;
 	}
 
+	// O(1)
 	public boolean startsWith(char c) {
 		if (word.charAt(0) == c) {
 			return true;
@@ -17,6 +21,7 @@ public class Wordy {
 		}
 	}
 
+	// O(N)
 	public int countLetter(char c) {
 		int lCount = 0;
 		for (int j = 0; j < word.length(); j++) {
@@ -27,6 +32,7 @@ public class Wordy {
 		return lCount;
 	}
 
+	// O(N^2)
 	public char mostFrequentLetter() {
 		char mostFreq = ' ';
 		int count = 0;
@@ -47,13 +53,14 @@ public class Wordy {
 		return mostFreq;
 	}
 
+	// O(N)
 	public String lettersContained() {
 		String letters = "abcdefghijklmnopqrstuvwxyz";
 		String ret = "";
 
-		for (int i = 0; i < letters.length(); i++) {
+		for (int i = 0; i < letters.length(); i++) { // Loop is O(1) because it always runs 26 times
 			char letter = letters.charAt(i);
-			if (word.indexOf(letter) >= 0) {
+			if (word.indexOf(letter) >= 0) { // O(N)
 				ret += letter;
 			}
 		}
