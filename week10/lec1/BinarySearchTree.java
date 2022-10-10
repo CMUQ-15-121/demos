@@ -182,15 +182,15 @@ public class BinarySearchTree<DataType extends Comparable<DataType>> {
 			if (node.left == null && node.right == null) {
 				return null; // Removes this node
 			}
-			// Case 2a: ???
+			// Case 2a: One child on the left
 			else if (node.left != null && node.right == null) {
 				return node.left;
 			}
-			// Case 2b: ???
+			// Case 2b: One child on the right 
 			else if (node.left == null && node.right != null) {
 				return node.right;
 			}
-			// Case 3: ???
+			// Case 3: Two children
 			else {
 				DataType succ = findSuccessor(node.right);
 				node.right = remove(node.right, succ);
