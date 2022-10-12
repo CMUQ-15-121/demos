@@ -42,26 +42,22 @@ public class BSTString {
 	 * @return The longest string in the tree
 	 */
 	public String longest() {
-		return "42";
+		return longest(this.root);
 	}
 
 	// Given a tree, returns longest string from that tree
 	private String longest(TreeNode node) {
 		String res1 = longest(node.left);
 		String res2 = longest(node.right);
-		// Other one is node.data
 
-		if (res2.length() > res1.length() && res2.length() > node.data.length()) {
-			return res2;
+		// Here is a nice trick to find the longest item from res1, res2, and node.data
+		String biggest = res1;
+		if (res2.length() > biggest.length()) {
+			biggest = res2;
 		}
-		else if (res1.length() > res2.length() && res1.length() > node.data.length()) {
-			return res1;
+		if (node.data.length() > biggest.length()) {
+			biggest = node.data;
 		}
-		else if (node.data.length() > res2.length() && node.data.length() > res1.length()) {
-			return node.data;
-		} else {
-			return null;// I don't have time for this
-		}
-		
+		return biggest;		
 	}
 }
