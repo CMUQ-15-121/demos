@@ -11,10 +11,14 @@ public class MyList {
 		arr = new String[100];
 	}
 
+	// O(1)
 	public int getSize() {
 		return numItems;
 	}
 
+	// Best Case: O(1)
+	// Worst Case: O(N)
+	// Overall, just use the worst case: O(N)
 	public void add(String s) {
 		if (numItems < arr.length) {
 			arr[numItems++] = s;
@@ -28,19 +32,21 @@ public class MyList {
 		}
 	}
 
+	// Worst case: O(N)
 	public void remove(int idx) {
-		if (idx < numItems) {
+		if (idx < numItems) { // O(1)
 			// Remove the item
-			arr[idx] = null;
+			arr[idx] = null; // O(1)
 			// Slide all the others back to remove the hole.
-			for (int i = idx + 1; i < numItems; i++) { 
-				arr[i - 1] = arr[i]; 
+			for (int i = idx + 1; i < numItems; i++) { // Worst case, loop runs N-1 times. 
+				arr[i - 1] = arr[i]; // O(1)
 			}
-			numItems--;
+			numItems--; // O(1)
 		}
 	}
 
 	// Return the number of times item occurs in the array
+	// O(N)
 	private int countItem(String item) {
 		int count = 0;
 
@@ -54,12 +60,13 @@ public class MyList {
 	}
 
 	// Return which item occurs most frequently in the array.
+	// O(N^2)
 	public String findMostFrequest() {
 		String mostFreq = "";
 		int howMany = 0;
 
-		for (int i = 0; i < numItems; i++) {
-			int count = countItem(arr[i]);
+		for (int i = 0; i < numItems; i++) { // N times
+			int count = countItem(arr[i]); // O(N)
 			if (count > howMany) {
 				howMany = count;
 				mostFreq = arr[i];
