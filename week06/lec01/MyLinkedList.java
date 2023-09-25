@@ -91,7 +91,7 @@ public class MyLinkedList<ListType> {
 			}
 			cnt++;		
 		}
-		throw new IndexOutOfBoundsException("Index "+idx+" out of bounds for length "+this.size());
+		throw new IndexOutOfBoundsException("Index: "+idx+", Size: "+this.size());
 	}
 	
 	/**
