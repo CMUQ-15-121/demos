@@ -158,16 +158,16 @@ public class MyLinkedList<ListType> {
 			return false;
 		}
 		
-		if (this.head.getData().equals(item)) {
+		if (this.head.getValue().equals(item)) {
 			head = head.next;
-			this.numNodes--;
+			this.numItems--;
 			return true;
 		}
 		
 		for(Node<ListType> tmp = this.head; tmp.next != null; tmp = tmp.next) {
-			if (tmp.next.getData().equals(item)) {
+			if (tmp.next.getValue().equals(item)) {
 				tmp.next = tmp.next.next;
-				this.numNodes--;
+				this.numItems--;
 				return true;
 			}
 		}	
