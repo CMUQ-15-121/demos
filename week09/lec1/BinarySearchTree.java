@@ -166,6 +166,10 @@ public class BinarySearchTree<DataType extends Comparable<DataType>> {
 		return node.data;
 	}
 
+	public void remove(DataType item) {
+		this.root = remove(this.root, item);
+	}
+
 	// @formatter:off
 	/*
 	 * Q's: 
