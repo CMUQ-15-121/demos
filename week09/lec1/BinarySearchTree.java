@@ -159,7 +159,7 @@ public class BinarySearchTree<DataType extends Comparable<DataType>> {
 	/*
 	 * Q: Why is this a useful helper function for remove?
 	 */
-	private DataType findSuccessor(TreeNode node) {
+	private DataType findMin(TreeNode node) {
 		while (node.left != null) {
 			node = node.left;
 		}
@@ -174,9 +174,8 @@ public class BinarySearchTree<DataType extends Comparable<DataType>> {
 	/*
 	 * Q's: 
      * - For the line `node.left = remove(node.left,item)`...
-     *    - What does our recursive function return?
+     *    - What does our recursive call return?
      *    - Why does it return that?
-     * - What would be good	comments for each of the cases (2a, 2b, 3) below?
      * - For case 1, why does `return null` result in the node being removed?
      * - For case 2a, why does returning node.left result in the node being removed?
      * - For case 2b, why does returning node.right result in the node being removed?
@@ -215,7 +214,7 @@ public class BinarySearchTree<DataType extends Comparable<DataType>> {
 			}
 			// Case 3: Two children
 			else {
-				DataType succ = findSuccessor(node.right);
+				DataType succ = findMin(node.right);
 				node.right = remove(node.right, succ);
 				node.data = succ;
 				return node;
