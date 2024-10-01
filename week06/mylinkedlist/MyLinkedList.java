@@ -1,6 +1,6 @@
 package mylinkedlist;
 
-public class MyLinkedList<ListType> {
+public class MyLinkedList<ListType> implements TheList<ListType> {
 	private Node<ListType> head;
 	private int size;
 	
@@ -163,7 +163,7 @@ public class MyLinkedList<ListType> {
 		// - What situation does the second if check for?
 		// - Why does the if inside the for-loop check tmp.next.getData() instead of tmp.getData()?
 		// - What instance variable have we forgotten to update?  Where should we do it?
-		if (this.head == null) {
+		if (this.isEmpty()) {
 			return false;
 		}
 		
@@ -179,6 +179,17 @@ public class MyLinkedList<ListType> {
 			}
 		}	
 		return false;
+	}
+	
+	/**
+	 * Remove all instances of item from the list.
+	 * 
+	 * This solution is O(N^2)
+	 * 
+	 * @param item The item to remove
+	 */
+	public void removeAll(ListType item) {
+		while(this.remove(item));
 	}
 	
 	public static void main(String[] args) {
