@@ -1,6 +1,7 @@
 
 public class Circle {
 	private double radius;
+	public static int a = 5;
 	
 	public Circle(double radius) {
 		this.radius = radius;
@@ -22,5 +23,9 @@ public class Circle {
 	
 	public double getRadius() {
 		return this.radius;
+	}
+	
+	public void setRadius(double radius) {
+		this.radius = radius;
 	}
 }
