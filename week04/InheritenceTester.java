@@ -16,7 +16,7 @@ public class InheritenceTester {
 		//special
 		System.out.println(s.getMajor());
 		//inherited
-		System.out.println(s.getName() + s.getMajor());
+		System.out.println(s.getName()); 
 		//customized
 		s.birthday();
 		
@@ -50,8 +50,12 @@ public class InheritenceTester {
 		l.add(ps);
 		
 		for(int i=0; i<l.size(); i++) {
-			System.out.println(l.get(i));
+			Person someone = l.get(i);
+			System.out.println(someone); //toString
+			System.out.printf("My name is %s and I am %d years old.%n", someone.getName(), someone.getAge());
+
 		}
+		
 		
 	}
 
