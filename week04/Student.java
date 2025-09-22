@@ -5,9 +5,7 @@ public class Student extends Person{
 	private String major;
 
 	public Student(String name, int age, String major) {
-		super(name, age);
-		// TODO Auto-generated constructor stub
-		
+		super(name, age);	//calls Person constructor	
 		this.major = major;
 	}
 

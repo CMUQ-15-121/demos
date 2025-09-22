@@ -13,6 +13,9 @@ public class InheritenceTester {
 		System.out.println("-------------");
 		
 		Student s = new Student("Ahmed", 18, "IS");
+		
+		
+		
 		//special
 		System.out.println(s.getMajor());
 		//inherited
@@ -36,9 +39,9 @@ public class InheritenceTester {
 		System.out.println("-------------");
 
 		
-		Person ps = new Student("John", 23, "CS");
+		Person ps = new Student("John", 23, "CS"); //can only access attributes and methods defined in Person class
 		System.out.println(ps.getName());
-		//System.out.println(ps.getMajor());
+		//System.out.println(ps.getMajor()); 
 		System.out.println(ps.toString()); //toString
 		
 		System.out.println("-------------");
@@ -52,10 +55,24 @@ public class InheritenceTester {
 		for(int i=0; i<l.size(); i++) {
 			Person someone = l.get(i);
 			System.out.println(someone); //toString
+			
 			System.out.printf("My name is %s and I am %d years old.%n", someone.getName(), someone.getAge());
-
+			//System.out.println("My name is"+someone.getName()+" and I am"+someone.getAge()+" years old.");
+		
+		
+			//check the object type
+			if(someone instanceof ISStudent) {
+				
+				//change the ref to ISStudent
+				/*ISStudent isRef = (ISStudent) someone;
+				isRef.switchToCS();*/
+				
+				((ISStudent) someone).switchToCS();	
+			}
+			
 		}
 		
+
 		
 	}
 
