@@ -40,7 +40,15 @@ public class LinkedListStack<DataType> implements Stack<DataType> {
 	 */
 	@Override
 	public DataType pop() {
-		return this.items.removeHead();
+		if (this.isEmpty()) {
+			return null;
+		}
+		DataType ret = this.items.get(0);
+		this.items.remove(ret);
+		return ret;
+		
+		//another way
+		//return this.items.removeHead();
 		
 	}
 
