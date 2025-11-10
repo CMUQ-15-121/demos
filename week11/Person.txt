@@ -1,0 +1,3 @@
+The code for the person class can be found in the notes for "Things to
+Override in Your Own Classes".
+
