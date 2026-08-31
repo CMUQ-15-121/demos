@@ -8,8 +8,8 @@ public class Circle {
 	
 	
 	public Circle(double radius) {
-		//this.radius= radius; // self in Python
-		double z = 3*this.radius;
+		this.radius= radius; // self in Python
+		//double z = 3*this.radius;
 	}
 	
 	
