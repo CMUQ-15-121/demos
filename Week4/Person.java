@@ -4,7 +4,12 @@ public class Person {
     private String name;
     private int age;
 
+    public Person() {
+    	System.out.println("Person Default Cons");
+    }
+    
     public Person(String name, int age) {
+    	this(); //Person()
         this.name = name;
         this.age = age;
     }

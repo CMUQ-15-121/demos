@@ -69,10 +69,29 @@ public class InheritenceTester {
 		l.add(is);
 		l.add(ps);
 		
+		//for(Person p: l)
+		
 		for(int i =0; i < l.size(); i++) {
+			
+			Person pi = l.get(i);
+			//check that underlying object is Student
+			if( pi instanceof ISStudent) {
+				
+				//tell compile to treat the reference as a Student
+					//casting
+				//ISStudent sc = (ISStudent) pi;
+				//sc.switchToCs();
+				
+				 ((ISStudent) pi).switchToCs();
+			}
+			
 			System.out.println(l.get(i));
 		}
 
+		
+		Staff f = new Staff();
+		f.setName("Joy");
+		f.setAge(20);
 	}
 
 }
