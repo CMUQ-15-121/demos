@@ -14,25 +14,36 @@ public class LinkedListQueue<DataType> implements Queue<DataType> {
 	@Override
 	public boolean isEmpty() {
 		// TODO Auto-generated method stub
-		return false;
+		return this.items.size()==0;
 	}
 
 	@Override
 	public void enqueue(DataType value) {
 		// TODO Auto-generated method stub
+		this.items.add(value);
 		
 	}
 
 	@Override
 	public DataType dequeue() {
 		// TODO Auto-generated method stub
-		return null;
+		if(this.isEmpty())
+			return null;
+		
+		DataType item = this.items.get(0);
+		this.items.remove(item);
+		
+		return item;
 	}
 
 	@Override
 	public DataType peek() {
 		// TODO Auto-generated method stub
-		return null;
+		
+		if(this.isEmpty())
+			return null;
+		
+		return this.items.get(0);
 	}
 	
 	
